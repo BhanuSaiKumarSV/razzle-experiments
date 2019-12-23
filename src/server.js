@@ -39,15 +39,15 @@ server
     <title>Welcome to Razzle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     ${assets.client.css
-      ? `<link rel="stylesheet" href="${assets.client.css}">`
+      ? `<link rel="stylesheet" href="https://s3.eu-west-3.amazonaws.com/assets.auto-poc-razzle.co/public${assets.client.css}">`
       : ''}
   </head>
   <body>
     <div id="root">${markup}</div>
     ${process.env.NODE_ENV === 'production'
-      ? `<script src="${assets.client.js}"></script>`
-      : `<script src="${assets.client.js}"></script>`}
-    ${chunks.map(chunk => `<script src="/${chunk.file}"></script>`).join('\n')}
+      ? `<script src="https://s3.eu-west-3.amazonaws.com/assets.auto-poc-razzle.co/public${assets.client.js}"></script>`
+      : `<script src="https://s3.eu-west-3.amazonaws.com/assets.auto-poc-razzle.co/public${assets.client.js}"></script>`}
+    ${chunks.map(chunk => `<script src="https://s3.eu-west-3.amazonaws.com/assets.auto-poc-razzle.co/public/${chunk.file}"></script>`).join('\n')}
   </body>
 </html>`,
       );

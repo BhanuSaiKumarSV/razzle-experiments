@@ -51,15 +51,15 @@ server
     <title>Welcome to Razzle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     ${assets.client.css
-      ? `<link rel="stylesheet" href="https://d2pqi6ljra79t0.cloudfront.net/public${assets.client.css}">`
+      ? `<link rel="stylesheet" href="https://d2a60em2xsvm3v.cloudfront.net/public${assets.client.css}">`
       : ''}
   </head>
   <body>
     <div id="root">${markup}</div>
     ${process.env.NODE_ENV === 'production'
-      ? `<script src="https://d2pqi6ljra79t0.cloudfront.net/public${assets.client.js}"></script>`
-      : `<script src="https://d2pqi6ljra79t0.cloudfront.net/public${assets.client.js}"></script>`}
-    ${chunks.map(chunk => `<script src="https://d2pqi6ljra79t0.cloudfront.net/public/${chunk.file}"></script>`).join('\n')}
+      ? `<script src="https://d2a60em2xsvm3v.cloudfront.net/public${assets.client.js}"></script>`
+      : `<script src="https://d2a60em2xsvm3v.cloudfront.net/public${assets.client.js}"></script>`}
+    ${chunks.map(chunk => `<script src="https://d2a60em2xsvm3v.cloudfront.net/public/${chunk.file}"></script>`).join('\n')}
   </body>
 </html>`,
       );

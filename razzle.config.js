@@ -12,20 +12,22 @@ module.exports = {
               filename: './build/react-loadable.json',
             }),
             new BrotliGzipPlugin({
-              asset: '[path].br[query]',
+              asset: '/br/[path][query]',
+              // asset: '[path].br[query]',
               algorithm: 'brotli',
               test: /\.(js|css|html|svg)$/,
-              threshold: 10240,
-              minRatio: 0.8,
+              threshold: 1024,
+              minRatio: 0.7,
               quality: 11
-          }),
-          new BrotliGzipPlugin({
-            asset: '[path].gz[query]',
-            algorithm: 'gzip',
-            test: /\.(js|css|html|svg)$/,
-            threshold: 10240,
-            minRatio: 0.8
-        })
+          })
+        //   new BrotliGzipPlugin({
+        //     asset: '/gzip/[path]',
+        //     // asset: '[path].gz[query]',
+        //     algorithm: 'gzip',
+        //     test: /\.(js|css|html|svg)$/,
+        //     threshold: 10240,
+        //     minRatio: 1
+        // })
           ],
         }
       : config,
